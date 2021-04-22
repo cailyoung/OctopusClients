@@ -16,7 +16,7 @@ namespace Octopus.Client
         {
             using (var octopusRegNode = Registry.LocalMachine.OpenSubKey(@"Software\Octopus"))
             {
-                if (octopusRegNode == null) 
+                if (octopusRegNode == null)
                     return;
                 CheckBasedOnApplication(octopusRegNode, "Server");
                 CheckBasedOnApplication(octopusRegNode, "Tentacle");
