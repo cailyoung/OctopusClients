@@ -10,3 +10,5 @@
      steps:
        - checkout
        - run: pwsh build.ps1
+       - store_artifacts:
+          path: /tmp/artifacts
