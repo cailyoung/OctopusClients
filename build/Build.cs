@@ -87,6 +87,7 @@ class Build : NukeBuild
             DotNetTest(_ => _
                 .SetProjectFile(testProjectFile)
                 .SetConfiguration(Configuration)
+                .SetLogger("trx;verbosity=normal")
                 .SetNoBuild(true));
         });
     });
