@@ -15,8 +15,9 @@
           when: always
           command: |
               dotnet tool install -g trx2junit
-              trx2junit /**/TestResults/*.trx
+              $files = Get-ChildItem . -Recurse -Include *.trx | Select-Object -Expand FullName
+              trx2junit $files --output ./TestResults
        - store_test_results:
-            path: /TestResults
+            path: ./TestResults
        - store_artifacts:
             path: C:\Users\circleci\LocalPackages
