@@ -165,6 +165,7 @@ class Build : NukeBuild
         DotNetTest(_ => _
             .SetProjectFile(SourceDir / "Octopus.Client.E2ETests" / "Octopus.Client.E2ETests.csproj")
             .SetConfiguration(Configuration)
+            .SetLogger("trx;verbosity=normal")
             .SetNoBuild(true));
     });
 
