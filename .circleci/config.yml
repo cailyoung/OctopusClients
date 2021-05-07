@@ -11,13 +11,12 @@
        - checkout
        - run: pwsh build.ps1
        - run:
-          name: test results
+          name: test results conversion
           when: always
           command: |
               dotnet tool install -g trx2junit
-              export PATH="$PATH:/root/.dotnet/tools"
               trx2junit /**/TestResults/*.trx
        - store_test_results:
-            path: tests/TestResults
+            path: /TestResults
        - store_artifacts:
             path: C:\Users\circleci\LocalPackages
